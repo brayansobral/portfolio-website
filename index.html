@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" alt="logo" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Olá, <br>Sou Brayan <span>Sobral</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/profile.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Ola! Eu sou Brayan Sobral, um Desenvolvedor Web que adora dar vida à ideias com a programação.
+                        Eu acredito que qualquer coisa é possível com o conhecimento certo, e adoro falar sobre isso com outras pessoas e tanto aprender como ensinar.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Habilidades</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experiência</p>
+                        <p class="tab-links" onclick="opentab('education')">Educação</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Java-Script</span></li>
+                            <li>Html</li>
+                            <li><span>Css</span></li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>09/22 - ATUAL</span><br>HelpDesk</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Análise e Desenvolvimento de Sistemas (Cursando)</span><br>Apesar do meu foco
+                                voltado ao front-end, este é um curso que me permite explorar novas áreas tecnológicas,
+                                sendo introduzido ao básico de áreas como cloud, banco de dados, segurança da
+                                informação, etc</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Portfolio Section -->
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Meu Trabalho </h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/Netflix.png" alt="">
+                    <div class="layer">
+                        <h3>Landing Page Responsiva da Netflix</h3>
+                        <p>Uma réplica da Landing Page da Netflix, incluindo suas ofertas e planos.</p>
+                        <a href="https://brayansobral.github.io/netflix-landingpage-clone/" target="_blank"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/Pokemon.png" alt="">
+                    <div class="layer">
+                        <h3>Pokedex Simples com Gif</h3>
+                        <p>Um projeto simples que fiz no tempo livre, ele servirá de base para um estudo de API em um
+                            futuro breve.</p>
+                        <a href="https://brayansobral.github.io/projeto-pokedex/" target="_blank"><i
+                                class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">Veja mais</a>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Entre em Contato</h1>
+                    <div class="social-icons">
+                        <a href="https://github.com/brayansobral" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/brayan-sobral-54505821a/" target="_blank"><i
+                                class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form action="https://formsubmit.co/ec5e8c07c1bb1e41393327eee2cc4155" method="POST">
+                        <input type="text" name="Name" placeholder="Seu Nome" required>
+                        <input type="email" name="email" placeholder="Seu Email" required>
+                        <textarea name="Message" rows="6" placeholder="Sua Mensagem"></textarea>
+                        <button type="submit" class="btn btn2">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copywrite">
+        <p>© 2023 BRAYAN LUIZ SOBRAL SANTOS</p>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab")
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+        // Menu Section
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0"
+        }
+        function closemenu() {
+            sidemenu.style.right = "-200px"
+        }
+    </script>
+
+    <!-- SmtpJs Section -->
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <!-- <script>
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function (e) {
+            e.preventDefault()
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+            var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+
+
+            Email.send({
+                SecureToken: "2de668f2-f37e-414f-bde9-f79573ef3496",
+                To: 'brayansobral3@gmail.com',
+                From: "brayansobral3@gmail.com",
+                Subject: "contact message",
+                Body: body
+            }).then(
+                message => alert(message)
+            ); 
+        }) -->
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
