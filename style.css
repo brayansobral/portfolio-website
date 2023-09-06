@@ -407,4 +407,9 @@ nav .fas {
     .layer p {
         display: none;
     }
+
+    .layer h3 {
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
 }
