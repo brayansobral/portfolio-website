@@ -403,4 +403,8 @@ nav .fas {
     .copywrite {
         font-size: 14px;
     }
+
+    .layer p {
+        display: none;
+    }
 }
